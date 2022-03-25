@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import VideoFrame from './components/videoFrame';
 import Avatar from './components/avatar';
 import "./assets/main.css";
-
+// 
 ReactDOM.render(
   <React.StrictMode>
     <ReactHUD
