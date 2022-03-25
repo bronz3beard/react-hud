@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import ReactHUD from './lib/reactHUD';
 import reportWebVitals from './reportWebVitals';
+
+import VideoFrame from './components/videoFrame';
+import Avatar from './components/avatar';
+import "./assets/main.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ReactHUD
+      hasFullScreen
+      topLeft={<Avatar />}
+      displayMiddle={
+        <VideoFrame
+          width="100%"
+          height="100%"
+          className="w-full h-full"
+          videoPath="https://www.youtube.com/watch?v=ChOhcHD8fBA"
+        />
+      }
+      hudClass="relative flex items-center justify-center h-full w-full max-h-screen bg-black"
+    />
   </React.StrictMode>,
   document.getElementById('root')
 );
