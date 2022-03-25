@@ -5,13 +5,17 @@ import reportWebVitals from './reportWebVitals';
 
 import VideoFrame from './components/videoFrame';
 import Avatar from './components/avatar';
+import ActiveAnimation from './components/activeAnimation';
 import "./assets/main.css";
-// 
+
 ReactDOM.render(
   <React.StrictMode>
     <ReactHUD
       hasFullScreen
       topLeft={<Avatar />}
+      bottomRight={
+        <ActiveAnimation backgroundColour="bg-red-500" />
+      }
       displayMiddle={
         <VideoFrame
           width="100%"

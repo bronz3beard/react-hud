@@ -9,6 +9,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = require("prop-types");
 
+var _fullScreenButton = _interopRequireDefault(require("./fullScreenButton"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const ReactHUD = props => {
@@ -34,14 +36,17 @@ const ReactHUD = props => {
     bottomRightClass,
     displayMiddleClass,
     hudClass,
-    hudContainerClass
+    hudContainerClass,
+    hasFullScreen
   } = props;
   return /*#__PURE__*/_react.default.createElement("div", {
     className: hudContainerClass,
-    id: "inspect-now-overlay-hud"
+    id: "react-hud"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: hudClass
-  }, topLeft && /*#__PURE__*/_react.default.createElement("div", {
+  }, hasFullScreen && /*#__PURE__*/_react.default.createElement(_fullScreenButton.default, {
+    elementId: "react-hud"
+  }), topLeft && /*#__PURE__*/_react.default.createElement("div", {
     id: "topLeft",
     className: topLeftClass
   }, topLeft), topMiddle && /*#__PURE__*/_react.default.createElement("div", {
@@ -75,6 +80,7 @@ const ReactHUD = props => {
 };
 
 ReactHUD.defaultProps = {
+  hasFullScreen: true,
   topLeftClass: 'absolute top-0 left-0 z-10',
   topMiddleClass: 'absolute top-0 left-1/2 transform -translate-x-1/2 z-10 lg:m-2',
   topRightClass: 'absolute top-0 right-0 z-10',
@@ -110,7 +116,8 @@ ReactHUD.propTypes = {
   bottomRightClass: _propTypes.string,
   displayMiddleClass: _propTypes.string,
   hudClass: _propTypes.string,
-  hudContainerClass: _propTypes.string
+  hudContainerClass: _propTypes.string,
+  hasFullScreen: _propTypes.bool
 };
 var _default = ReactHUD;
 exports.default = _default;
