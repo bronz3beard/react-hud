@@ -14,7 +14,7 @@ const Avatar = (props) => {
                     className="flex items-center no-underline hover:underline text-black"
                 >
                     {imageUrl && (
-                        <img alt="avatar" src={imageUrl} className="block w-12 h-12 rounded-full" />
+                        <img alt="avatar" src={imageUrl} className="block w-12 h-12 rounded-full border border-1 border-red-500" />
                     )}
                     {authorName && <p className="ml-2 text-sm">{authorName}</p>}
                 </a>

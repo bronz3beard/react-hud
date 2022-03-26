@@ -63,20 +63,20 @@ const FullScreen = (props) => {
     }, [showFullScreen]);
 
     return (
-        <button
-            type="button"
-            id="fullscreen"
-            onClick={requestFullScreen}
-            className="absolute w-8 h-8 top-32 right-4 z-10 rounded items-center font-medium overflow-hidden bg-transparent hover:bg-gray-300 active:bg-gray-300 cursor-pointer"
-        >
-            <span className="w-10 h-9 hover:bg-transparent overflow-hidden rounded">
-                <FontAwesomeIcon
-                    color="#000000"
-                    size={!showFullScreen ? "1x" : "lg"}
-                    icon={!showFullScreen ? faExpand : faCompressAlt}
-                />
-            </span>
-        </button>
+            <button
+                type="button"
+                id="fullscreen"
+                onClick={requestFullScreen}
+                className="block m-4 w-8 h-8 z-10 rounded items-center font-medium overflow-hidden bg-transparent hover:bg-gray-300 active:bg-gray-300 cursor-pointer"
+            >
+                <span className="w-10 h-9 hover:bg-transparent overflow-hidden rounded">
+                    <FontAwesomeIcon
+                        color="#000000"
+                        size={!showFullScreen ? "1x" : "lg"}
+                        icon={!showFullScreen ? faExpand : faCompressAlt}
+                    />
+                </span>
+            </button>
     );
 };
 
