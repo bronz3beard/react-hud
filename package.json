@@ -1,21 +1,19 @@
 {
   "name": "react-heads-up-display",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
-  "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "autoprefixer": "^9.8.8",
-    "postcss": "^7.0.39",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4"
-  },
+  "homepage": "https://github.com/bronz3beard/react-hud",
+  "author": "bronz3beard <exempli.gratia.webdesign@gmail.com> (https://www.eg-web-design.com/)",
+  "keywords": [
+    "react",
+    "HUD",
+    "Head Up Display",
+    "Feature",
+    "View",
+    "Video",
+    "Images",
+    "showcase"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
@@ -45,6 +43,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "autoprefixer": "^9.8.8",
+    "postcss": "^7.0.39",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
