@@ -74,7 +74,7 @@ const FullScreen = props => {
     type: "button",
     id: "fullscreen",
     onClick: requestFullScreen,
-    className: "absolute w-8 h-8 top-32 right-4 z-10 rounded items-center font-medium overflow-hidden bg-transparent hover:bg-gray-300 active:bg-gray-300 cursor-pointer"
+    className: "block m-4 w-8 h-8 z-10 rounded items-center font-medium overflow-hidden bg-transparent hover:bg-gray-300 active:bg-gray-300 cursor-pointer"
   }, /*#__PURE__*/_react.default.createElement("span", {
     className: "w-10 h-9 hover:bg-transparent overflow-hidden rounded"
   }, /*#__PURE__*/_react.default.createElement(_reactFontawesome.FontAwesomeIcon, {

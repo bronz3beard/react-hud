@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+# React HUD &nbsp; [![npm version](https://badge.fury.io/js/react-hud.svg)](https://badge.fury.io/js/react-hud)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[React Matrix Demo](https://react-matrix.herokuapp.com/)
 
-## Available Scripts
+React HUD will showcase a view (image, video, carousel, whatever you want) on your website, with multiple action points overlaying the display.
 
-In the project directory, you can run:
+----
+# PR's
+- Have a look at the [PR template doc](https://github.com/bronz3beard/react-matrix/blob/main/docs) for best approach to getting your pr merged.
 
-### `npm start`
+----
+# Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```js 
+import { ReactHUD } from "react-hud";
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+const App = () => {
+  ...
+;
+  return (
+    <ReactHUD
+        topLeft={{} | ReactElementLike | ReactNodeArray | string | number | boolean | null | undefined}
+        topMiddle={{} | ReactElementLike | ReactNodeArray | string | number | boolean | null | undefined}
+        topRight={{} | ReactElementLike | ReactNodeArray | string | number | boolean | null | undefined}
+        centreLeft={{} | ReactElementLike | ReactNodeArray | string | number | boolean | null | undefined}
+        centreMiddle={{} | ReactElementLike | ReactNodeArray | string | number | boolean | null | undefined}
+        centreRight={{} | ReactElementLike | ReactNodeArray | string | number | boolean | null | undefined}
+        bottomLeft={{} | ReactElementLike | ReactNodeArray | string | number | boolean | null | undefined}
+        bottomMiddle={{} | ReactElementLike | ReactNodeArray | string | number | boolean | null | undefined}
+        bottomRight={{} | ReactElementLike | ReactNodeArray | string | number | boolean | null | undefined}
+        displayMiddle={{} | ReactElementLike | ReactNodeArray | string | number | boolean | null | undefined}
+        topLeftClass=""
+        topMiddleClass=""
+        topRightClass=""
+        centreLeftClass=""
+        centreMiddleClass=""
+        centreRightClass=""
+        bottomLeftClass=""
+        bottomMiddleClass=""
+        bottomRightClass=""
+        displayMiddleClass=""
+        hudClass=""
+        hudContainerClass=""
+        hasFullScreen={
+        topLeft: boolean,
+        topMiddle: boolean,
+        topRight: boolean,
+        centreLeft: boolean,
+        centreMiddle: boolean,
+        centreRight: boolean,
+        bottomLeft: boolean,
+        bottomMiddle: boolean,
+        bottomRight: boolean
+        }
+    />
+  )
+}
+```
 
-### `npm test`
+----
+# PropTypes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```js
 
-### `npm run build`
+    ReactHUD.defaultProps = {
+    topLeftClass: 'absolute top-0 left-0 z-10',
+    topMiddleClass: 'absolute top-0 left-1/2 transform -translate-x-1/2 z-10',
+    topRightClass: 'absolute top-0 right-0 z-10',
+    centreLeftClass: 'absolute top-1/2 left-0 -translate-y-1/2 z-10',
+    centreMiddleClass: 'absolute top-1/2 left-1/2 transform -translate-x-1/2 z-10',
+    centreRightClass: 'absolute top-1/2 right-0 -translate-y-1/2 z-10',
+    bottomLeftClass: 'absolute bottom-0 left-0 z-10',
+    bottomMiddleClass: 'absolute bottom-0 lg:left-1/2 lg:transform lg:-translate-x-1/2 z-10 lg:w-2/5 w-full',
+    bottomRightClass: 'absolute lg:bottom-0 bottom-2 right-0 z-10',
+    displayMiddleClass: 'absolute w-full h-full z-0',
+    hudClass: 'relative flex items-center justify-center h-full w-full bg-black m-0 p-0',
+    hudContainerClass: 'absolute inset-0 m-0 p-0 h-full max-h-full w-full',
+    hasFullScreen: {
+        topLeft: false,
+        topMiddle: false,
+        topRight: false,
+        centreLeft: false,
+        centreMiddle: false,
+        centreRight: false,
+        bottomLeft: false,
+        bottomMiddle: false,
+        bottomRight: false
+    },
+    };
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ReactHUD.propTypes = {
+    topLeft: node,
+    topMiddle: node,
+    topRight: node,
+    centreLeft: node,
+    centreMiddle: node,
+    centreRight: node,
+    bottomLeft: node,
+    bottomMiddle: node,
+    bottomRight: node,
+    displayMiddle: node,
+    topLeftClass: string,
+    topMiddleClass: string,
+    topRightClass: string,
+    centreLeftClass: string,
+    centreMiddleClass: string,
+    centreRightClass: string,
+    bottomLeftClass: string,
+    bottomMiddleClass: string,
+    bottomRightClass: string,
+    displayMiddleClass: string,
+    hudClass: string,
+    hudContainerClass: string,
+    hasFullScreen: shape({
+        topLeft: bool,
+        topMiddle: bool,
+        topRight: bool,
+        centreLeft: bool,
+        centreMiddle: bool,
+        centreRight: bool,
+        bottomLeft: bool,
+        bottomMiddle: bool,
+        bottomRight: bool
+    }),
+    };
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+----
+# Available Properties
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+----
+# Styling Properties
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+All styling is controlled by tailwind and you can override any part of the HUD, by adding any of the following props.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```js
+    topLeftClass: string,
+    topMiddleClass: string,
+    topRightClass: string,
+    centreLeftClass: string,
+    centreMiddleClass: string,
+    centreRightClass: string,
+    bottomLeftClass: string,
+    bottomMiddleClass: string,
+    bottomRightClass: string,
+    displayMiddleClass: string,
+    hudClass: string,
+    hudContainerClass: string,
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+----
+# Create React App
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
