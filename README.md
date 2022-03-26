@@ -1,12 +1,12 @@
 # React HUD &nbsp; [![npm version](https://badge.fury.io/js/react-hud.svg)](https://badge.fury.io/js/react-hud)
 
-[React Matrix Demo](https://react-matrix.herokuapp.com/)
+[React HUD Demo](https://react-hud.herokuapp.com/)
 
 React HUD will showcase a view (image, video, carousel, whatever you want) on your website, with multiple action points overlaying the display.
 
 ----
 # PR's
-- Have a look at the [PR template doc](https://github.com/bronz3beard/react-matrix/blob/main/docs) for best approach to getting your pr merged.
+- Have a look at the [PR template doc](https://github.com/bronz3beard/react-hud/blob/master/docs/pull_request_template.md) for best approach to getting your pr merged.
 
 ----
 # Usage
