@@ -69,7 +69,7 @@ const FullScreen = props => {
     if (requestMethod) {
       requestMethod.call(element);
     }
-  }, [showFullScreen]);
+  }, [elementId, showFullScreen]);
   return /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
     id: "fullscreen",

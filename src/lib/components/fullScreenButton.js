@@ -60,7 +60,7 @@ const FullScreen = (props) => {
         if (requestMethod) {
         requestMethod.call(element);
         }
-    }, [showFullScreen]);
+    }, [elementId, showFullScreen]);
 
     return (
             <button

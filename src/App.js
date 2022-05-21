@@ -14,8 +14,6 @@ const App = () => {
   const handleDimensionClick = (event) => {
     event.preventDefault();
     const { id, name } = event.target;
-    console.log("🚀 ~ file: App.js ~ line 15 ~ handleDimensionClick ~ id", id)
-
 
     setDimensions(id);
     setDimensionSelected(name);

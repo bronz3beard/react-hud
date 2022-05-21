@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import PropTypes from "prop-types";
 
 const VideoFrame = (props) => {
@@ -7,12 +7,7 @@ const VideoFrame = (props) => {
   // const isMp4 = videoPath !== undefined && videoPath.indexOf('.mp4') > -1;
   // const isWebM = videoPath !== undefined && videoPath.indexOf('.webm') > -1;
 
-    useEffect(() => {
-        getYouTubeIframeLink();
-        getVimeoIframeLink();
-    }, [videoPath]);
-
-    const getYouTubeIframeLink = () => {
+    const getYouTubeIframeLink = useCallback(() => {
         const isYouTube =
         videoPath !== undefined &&
         videoPath.indexOf(".youtube") > -1 &&
@@ -22,9 +17,9 @@ const VideoFrame = (props) => {
             const youTubeArr = isYouTube.split("/watch?v=");
             setVideoUrl(`${youTubeArr[0]}/embed/${youTubeArr[1]}`);
         }
-    };
+    }, [videoPath]);
 
-    const getVimeoIframeLink = () => {
+    const getVimeoIframeLink = useCallback(() => {
         const isVimeo =
         videoPath !== undefined && videoPath.indexOf("//vimeo") > -1 && videoPath;
 
@@ -34,7 +29,12 @@ const VideoFrame = (props) => {
                 setVideoUrl(`${vimeoArr[0]}player.vimeo.com/video/${vimeoArr[1]}`);
             }
         }
-    };
+    }, [videoPath]);
+
+    useEffect(() => {
+        getYouTubeIframeLink();
+        getVimeoIframeLink();
+    }, [videoPath, getYouTubeIframeLink, getVimeoIframeLink]);
 
     return (
         <div className={className}>
