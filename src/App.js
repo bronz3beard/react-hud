@@ -5,7 +5,7 @@ import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import VideoFrame from './components/videoFrame';
 import Avatar from './components/avatar';
 import IconsRow from "./components/iconsRow";
-import { ReactHUD } from "./lib";
+import { ReactHUD } from "react-heads-up-display"; // "./lib";
 
 const App = () => {
   const [dimensions, setDimensions] = useState('h-full w-full')
